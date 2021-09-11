@@ -42,7 +42,7 @@ this.lightbringer_sword <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/slash_lightning"));
-		this.addSkill(this.new("scripts/skills/actives/parry"));
+		this.addSkill(this.new("scripts/skills/actives/riposte_lightning"));
 	}
 
 	function onAddedToStash( _stashID )
