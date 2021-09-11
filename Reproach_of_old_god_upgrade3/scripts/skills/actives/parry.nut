@@ -200,9 +200,7 @@ this.parry <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		
 		this.m.DefenseBonus = 0;
-		
 		if (this.isEnabled())
 		{
 			this.m.DefenseBonus = this.getDefenseBonus(_properties);
