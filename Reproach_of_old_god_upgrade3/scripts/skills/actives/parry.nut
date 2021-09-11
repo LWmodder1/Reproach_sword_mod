@@ -8,7 +8,7 @@ this.parry <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.parry";
 		this.m.Name = "Parry";
-		this.m.Description = "Prepare to immediately counter-attack any opponent that attempts to attack in melee and misses with enhanced defensive posture. A character under the parry condition receives bonus in melee defense that is proportinal to melee attack. The amount ";
+		this.m.Description = "Prepare to immediately counter-attack any opponent that attempts to attack in melee and misses with enhanced defensive posture. A character under the parry condition receives bonus in melee defense that is proportinal to melee attack. The amount of bonus varries with the number of surrounding enemies. ";
 		this.m.Icon = "skills/active_33.png";
 		this.m.IconDisabled = "skills/active_33_sw.png";
 		this.m.Overlay = "active_33";
@@ -104,32 +104,32 @@ this.parry <- this.inherit("scripts/skills/skill", {
 		
 		if (adjacentEnemies == 6)
 		{
-			return 5;
+			bonus = 6;
 		}
 
         else if (adjacentEnemies == 5)
 		{
-		    return 6
+		    bonus = 9;
 		}
 
 		else if (adjacentEnemies == 4)
 		{
-			bonus = 8;
+			bonus = 11;
 		}
 		
 		else if (adjacentEnemies == 3)
 		{
-			bonus = 11;
+			bonus = 13;
 		}
 
 		else if (adjacentEnemies == 2)
 		{
-			bonus = 15;
+			bonus = 14;
 		}
 		
 		else if (adjacentEnemies == 1)
 		{
-			bonus = 20;
+			bonus = 15;
 		}
 
 		
