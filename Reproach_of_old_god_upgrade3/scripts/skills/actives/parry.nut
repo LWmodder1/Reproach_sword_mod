@@ -6,7 +6,7 @@ this.parry <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "actives.riposte";
+		this.m.ID = "actives.parry";
 		this.m.Name = "Parry";
 		this.m.Description = "Prepare to immediately counter-attack any opponent that attempts to attack in melee and misses with enhanced defensive posture. A character under the parry condition receives bonus in melee defense that is proportinal to melee attack. The amount of bonus varries with the number of surrounding enemies. ";
 		this.m.Icon = "skills/active_33.png";
