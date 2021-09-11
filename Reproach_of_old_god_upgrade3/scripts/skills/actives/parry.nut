@@ -190,7 +190,6 @@ this.parry <- this.inherit("scripts/skills/skill", {
 			_properties.MeleeDefense += this.m.DefenseBonus;
 		}
 	}
-	}
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
