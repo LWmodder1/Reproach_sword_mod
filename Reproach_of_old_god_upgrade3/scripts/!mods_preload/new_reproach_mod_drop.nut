@@ -1,4 +1,7 @@
-::mods_hookExactClass("entity/tactical/enemies/ghost_knight", function(obj)
+::mods_registerMod("mod_Reproach_sword_upgrade", 1.0, "Reproach of old gods upgrade");
+::mods_queue("mod_Reproach_sword_upgrade", null, function()
+{
+    ::mods_hookExactClass("entity/tactical/enemies/ghost_knight", function(obj)
     {
         local onDeath = ::mods_getMember(obj, "onDeath");
         obj.onDeath = function( _killer, _skill, _tile, _fatalityType )
@@ -14,3 +17,5 @@
             onDeath(_killer, _skill, _tile, _fatalityType);
         }
     });
+})
+	
