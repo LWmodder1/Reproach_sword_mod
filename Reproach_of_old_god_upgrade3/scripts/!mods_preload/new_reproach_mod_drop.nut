@@ -10,7 +10,7 @@
 
             if (_tile != null)
             {
-                local loot = this.new('items/weapons/legendary/lightbringer_sword2.nut');
+                local loot = this.new("scripts/items/weapons/legendary/lightbringer_sword2");
                 loot.drop(_tile);
             }
 
@@ -18,4 +18,3 @@
         }
     });
 })
-	
