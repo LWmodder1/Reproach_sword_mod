@@ -7,7 +7,7 @@ this.parry <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.parry";
 		this.m.Name = "Parry";
-		this.m.Description = "Prepare to immediately counter-attack any opponent that attempts to attack in melee and misses with enhanced defensive posture. A character under the parry condition receives a ranged and melee defense bonus based on the melee attack and the number of adjacent surrounding enemies. ";
+		this.m.Description = "Prepare to immediately counter-attack any opponent that attempts to attack in melee and misses with enhanced defensive posture. A character under the parry condition receives a bonus to ranged and melee defense based on the melee attack and the number of adjacent surrounding enemies. ";
 		this.m.Icon = "skills/active_33.png";
 		this.m.IconDisabled = "skills/active_33_sw.png";
 		this.m.Overlay = "active_33";
@@ -175,12 +175,18 @@ this.parry <- this.inherit("scripts/skills/skill", {
 				icon = "ui/icons/melee_defense.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.DefenseBonus + "[/color] Melee Defense"
 			}
+			{
+				id = 5,
+				type = "text",
+				icon = "ui/icons/ranged_defense.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.DefenseBonus + "[/color] Ranged Defense"
+			}
 		];
 
 		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
 		{
 			ret.push({
-				id = 5,
+				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
 				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] chance to hit"
