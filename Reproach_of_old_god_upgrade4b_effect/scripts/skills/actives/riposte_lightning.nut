@@ -53,7 +53,7 @@ this.riposte_lightning <- this.inherit("scripts/skills/skill", {
 				id = 3,
 				type = "text",
 				text = this.getCostString()
-			}
+			},
 			{
 				id = 4,
 				type = "text",
