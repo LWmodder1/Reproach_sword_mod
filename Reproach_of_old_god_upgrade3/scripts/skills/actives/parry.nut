@@ -105,7 +105,7 @@ this.parry <- this.inherit("scripts/skills/skill", {
 		{
 			bonus = 6;
 		}
-        else if (adjacentEnemies == 5)
+                else if (adjacentEnemies == 5)
 		{
 		    bonus = 9;
 		}
