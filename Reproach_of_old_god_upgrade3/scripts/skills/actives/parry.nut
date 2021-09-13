@@ -100,37 +100,32 @@ this.parry <- this.inherit("scripts/skills/skill", {
 
 			adjacentEnemies += 1;
 		}
-		
+
 		if (adjacentEnemies == 6)
 		{
 			bonus = 6;
 		}
-
-                else if (adjacentEnemies == 5)
+        else if (adjacentEnemies == 5)
 		{
 		    bonus = 9;
 		}
-
 		else if (adjacentEnemies == 4)
 		{
 			bonus = 11;
 		}
-		
 		else if (adjacentEnemies == 3)
 		{
 			bonus = 13;
 		}
-
 		else if (adjacentEnemies == 2)
 		{
 			bonus = 14;
 		}
-		
 		else if (adjacentEnemies == 1)
 		{
 			bonus = 15;
 		}
-		
+
 		return this.Math.round(0.01 * bonus * actor.getCurrentProperties().getMeleeSkill());
 	}
 
@@ -168,13 +163,13 @@ this.parry <- this.inherit("scripts/skills/skill", {
 				id = 3,
 				type = "text",
 				text = this.getCostString()
-			}
+			},
 			{
 				id = 4,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.DefenseBonus + "[/color] Melee Defense"
-			}
+			},
 			{
 				id = 5,
 				type = "text",
