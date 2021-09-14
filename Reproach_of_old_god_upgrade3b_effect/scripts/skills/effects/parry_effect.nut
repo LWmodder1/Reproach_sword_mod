@@ -129,8 +129,9 @@ this.parry_effect <- this.inherit("scripts/skills/skill", {
 		_properties.RangedDefense += this.getDefenseBonus(_properties);
 	}
 
-	function getTooltip( _properties )
+	function getTooltip()
 	{
+		local _properties = this.getContainer().getActor().getCurrentProperties();
 		return [
 			{
 				id = 1,
