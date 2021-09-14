@@ -16,8 +16,8 @@ this.lightbringer_sword2 <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_sword_legendary_01";
-		this.m.Condition = 90.0;
-		this.m.ConditionMax = 90.0;
+		this.m.Condition = 135.0;
+		this.m.ConditionMax = 135.0;
 		this.m.StaminaModifier = -8;
 		this.m.Value = 20000;
 		this.m.RegularDamage = 50;
