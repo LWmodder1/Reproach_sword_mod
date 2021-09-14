@@ -14,7 +14,7 @@ this.parry_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character is prepared to immediately counter-attack on any failed attempt to attack him in melee with enhanced defensive posture. A character under the parry condition receives a ranged and melee defense bonus based on the melee attack and the number of adjacent surrounding enemies. ";
+		return "This character is prepared to immediately counter-attack on any failed attempt to attack him in melee with enhanced defensive posture. A character under the parry condition receives a bonus to ranged and melee defense based on the melee attack and the number of adjacent surrounding enemies. ";
 	}
 
 	function onUpdate( _properties )

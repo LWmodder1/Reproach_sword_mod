@@ -1,6 +1,7 @@
 this.parry <- this.inherit("scripts/skills/skill", {
 	m = {
 		IsSpent = false,
+		IsForceEnabled = false,
 		DefenseBonus = 0
 	},
 	function create()
@@ -28,6 +29,39 @@ this.parry <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
+	}
+	
+	function onVerifyTarget( _originTile, _targetTile )
+	{
+		return true;
+	}
+
+	function onUse( _user, _targetTile )
+	{
+		if (!this.m.IsSpent)
+		{
+			this.m.Container.add(this.new("scripts/skills/effects/parry_effect"));
+			this.m.IsSpent = true;
+
+			if (!_user.isHiddenToPlayer())
+			{
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Parry");
+			}
+
+			return true;
+		}
+
+		return false;
+	}
+
+	function onTurnStart()
+	{
+		this.m.IsSpent = false;
+	}
+
+	function onRemoved()
+	{
+		this.m.Container.removeByID("effects.parry");
 	}
 	
 	function getDefenseBonus(_properties)
@@ -105,23 +139,28 @@ this.parry <- this.inherit("scripts/skills/skill", {
 		{
 			bonus = 6;
 		}
-                else if (adjacentEnemies == 5)
+
+		if (adjacentEnemies == 5)
 		{
-		        bonus = 9;
+			bonus = 9;
 		}
-		else if (adjacentEnemies == 4)
+
+		if (adjacentEnemies == 4)
 		{
 			bonus = 11;
 		}
-		else if (adjacentEnemies == 3)
+
+		if (adjacentEnemies == 3)
 		{
 			bonus = 13;
 		}
-		else if (adjacentEnemies == 2)
+
+		if (adjacentEnemies == 2)
 		{
 			bonus = 14;
 		}
-		else if (adjacentEnemies == 1)
+
+		if (adjacentEnemies == 1)
 		{
 			bonus = 15;
 		}
@@ -191,37 +230,22 @@ this.parry <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function onVerifyTarget( _originTile, _targetTile )
+	function isEnabled()
 	{
-		return true;
-	}
-
-	function onUse( _user, _targetTile )
-	{
-		if (!this.m.IsSpent)
+		if (this.m.IsForceEnabled)
 		{
-			this.m.Container.add(this.new("scripts/skills/effects/parry_effect"));
-			this.m.IsSpent = true;
-
-			if (!_user.isHiddenToPlayer())
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Parry");
-			}
-
 			return true;
 		}
-
-		return false;
-	}
-
-	function onTurnStart()
-	{
-		this.m.IsSpent = false;
-	}
-
-	function onRemoved()
-	{
-		this.m.Container.removeByID("effects.parry");
+		
+		// local items = this.getContainer().getActor().getItems();
+		// local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+		// 
+		// if (off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) || off != null && off.isItemType(this.Const.Items.ItemType.Tool))
+		// {
+		// 	return true;
+		// }
+		// 
+		// return false;
 	}
 
 });
