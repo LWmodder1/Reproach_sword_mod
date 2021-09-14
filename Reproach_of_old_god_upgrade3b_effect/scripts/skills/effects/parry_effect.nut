@@ -129,7 +129,7 @@ this.parry_effect <- this.inherit("scripts/skills/skill", {
 		_properties.RangedDefense += this.getDefenseBonus(_properties);
 	}
 
-	function getTooltip()
+	function getTooltip( _properties )
 	{
 		return [
 			{
