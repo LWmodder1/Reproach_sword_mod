@@ -131,7 +131,7 @@ this.parry_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local _properties = this.getContainer().getActor().getCurrentProperties();
+		local bonus = this.getContainer().getActor().getCurrentProperties();
 		return [
 			{
 				id = 1,
@@ -147,13 +147,13 @@ this.parry_effect <- this.inherit("scripts/skills/skill", {
 				id = 3,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.getDefenseBonus(_properties) + "[/color] Melee Defense"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.getDefenseBonus(bonus) + "[/color] Melee Defense"
 			},
 			{
 				id = 4,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.getDefenseBonus(_properties) + "[/color] Ranged Defense"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.getDefenseBonus(bonus) + "[/color] Ranged Defense"
 			}
 		];
 	}
