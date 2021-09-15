@@ -176,7 +176,7 @@ this.parry_lightning_effect <- this.inherit("scripts/skills/skill", {
 		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
 		{
 			ret.push({
-				id = 4,
+				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
 				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] chance to hit"
