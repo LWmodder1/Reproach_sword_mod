@@ -350,7 +350,12 @@ this.chain_lightning <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.RangedAttackBlockedChanceMult *= 0;
-			_properties.RangedDefense = 0;
+			
+			if (_targetEntity != null)
+			{
+				_targetEntity.rangeDefense = 0;
+			}
+		}	
 	}
 
 });
