@@ -117,11 +117,6 @@ this.chain_lightning <- this.inherit("scripts/skills/skill", {
 		}, _data);
 	}
 
-	function onAfterUpdate( _properties )
-	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-	}
-	
 	function SpellHitChance()
 	{
 		local actor = this.getContainer().getActor();
