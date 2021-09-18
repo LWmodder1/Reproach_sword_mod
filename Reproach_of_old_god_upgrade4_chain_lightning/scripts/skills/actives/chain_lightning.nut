@@ -357,6 +357,10 @@ this.chain_lightning <- this.inherit("scripts/skills/skill", {
 			}
 		}	
 	}
-
+	
+	function onMiss
+	{
+		this.Tactical.EventLog.log("[color=" + this.Const.UI.Color.NegativeValue + "]Failed to bring the lightning![/color]");
+	}
 });
 
