@@ -353,7 +353,7 @@ this.chain_lightning <- this.inherit("scripts/skills/skill", {
 			
 			if (_targetEntity != null)
 			{
-				_targetEntity.rangeDefense = 0;
+				_targetEntity.getCurrentProperties().RangedDefense
 			}
 		}	
 	}
